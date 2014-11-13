@@ -1,0 +1,24 @@
+Statistics of data:-
+
+----------------------------------------------------------------------------------------
+Raw data
+----------------------------------------------------------------------------------------
+Number of ego nodes = 973
+Number of nodes = 73,000
+Number of celebs = 176,011
+Number of edges between users and celebs = 1,153,442
+
+
+----------------------------------------------------------------------------------------
+All category graph (without user network)
+----------------------------------------------------------------------------------------
+UNDIRECTED
+
+Number of nodes = 61511, edges = 562459
+Number of users = 51291, categories = 10220
+
+Average Clustering Coefficient for Graph: 0.000000
+Diamter for Graph= 4
+SCC: Number of nodes = 61489, edges = 562430
+Fractional Size SCC of Graph: 0.999642
+
