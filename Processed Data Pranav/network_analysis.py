@@ -49,28 +49,32 @@ def get_graph_measures(G, categorynumber_category_mapper):
 	# Nodes = snap.TIntFltH()
 	# Edges = snap.TIntPrFltH()
 	# snap.GetBetweennessCentr(G, Nodes, Edges, 1.0)
+	print "Starting pagerank"
 	PRankH = snap.TIntFltH()
 	snap.GetPageRank(G, PRankH)
+	print "Pagerank ended"
 	# NIdHubH = snap.TIntFltH()
 	# NIdAuthH = snap.TIntFltH()
 	# snap.GetHits(Graph, NIdHubH, NIdAuthH)
 
-	for nit in G.Nodes():
-		node = nit.GetId()
-		if node >= pow(10,9):  # i.e. a category node
-			FarCentr = snap.GetFarnessCentr(G, nit.GetId())
-			DegCentr = snap.GetDegreeCentr(G, nit.GetId())
-			Necc = snap.GetNodeEcc(G, nit.GetId(), True)
+	# for nit in G.Nodes():
+	# 	node = nit.GetId()
+	# 	if node >= pow(10,9):  # i.e. a category node
+	# 		FarCentr = snap.GetFarnessCentr(G, nit.GetId())
+	# 		DegCentr = snap.GetDegreeCentr(G, nit.GetId())
+	# 		Necc = snap.GetNodeEcc(G, nit.GetId(), True)
 
 			# print "%d, %f, %f, %f\n"%(node, FarCentr, DegCentr, Necc)
 			# print "Betweenness centrality: %f" %(Nodes[node])
 	output_file_name = './graphs/category_scores/allcategorygraph_pageranks.txt'
 	f_output = open(output_file_name, 'w')
+	print 'Writing output to %s'%(output_file_name)
 	for item in PRankH:
+		# print item
 		if item >= pow(10,9):
-			s = '%d, %f\n'%(categorynumber_category_mapper[item-pow(10,9)], PRankH[item])
+			s = '%s, %f\n'%(categorynumber_category_mapper[item-pow(10,9)], PRankH[item])
 			f_output.write(s)
-
+	f_output.close()
 
 
 def main():
