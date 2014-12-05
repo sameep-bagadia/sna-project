@@ -101,7 +101,7 @@ if __name__ == "__main__":
         processList.append(Process(target=main, args = (directory+onlyfiles[i],)))
 
     numAlive = getNumAlive(processList)
-    maxAlive = 10
+    maxAlive = 40
 
     for i in range(len(processList)):
         numAlive = getNumAlive(processList)
