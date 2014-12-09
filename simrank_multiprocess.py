@@ -89,7 +89,7 @@ def main(filename):
 
 if __name__ == "__main__":
     currdir = getcwd()
-    foldername = "graphs_by_category"
+    foldername = "graphs_dual_categories"
     directory = currdir+"/"+foldername+"/"
 
     onlyfiles = [f for f in listdir(directory) if isfile(join(directory,f)) ]
