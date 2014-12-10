@@ -43,7 +43,7 @@ def calculate(category_map, filepath, filename):
 					fout.write('%s %s %.10f\n' % (category_map[node1a], category_map[node2a], score))
 
 def main():
-	count = 1
+	count = 48
 	total_files = 258
 	category_map = get_categorynumber_category_mapper()
 	with open('dual_simrank_list.txt') as f:
